@@ -1,7 +1,7 @@
 # cm2Lua
 
 ### Overview
-`cm2Lua` is a high-level savestring manipulator for the Roblox game [Circuit Maker 2](https://www.roblox.com/games/6652606416/Circuit-Maker-2). It allows players to create and manipulate circuit designs programmatically.
+`cm2Lua` is a high-level savestring manipulator for the Roblox game [Circuit Maker 2](https://www.roblox.com/games/6652606416/Circuit-Maker-2). It allows players to create and manipulate circuits programmatically.
 
 ## Documentation
 [Save](#save)
