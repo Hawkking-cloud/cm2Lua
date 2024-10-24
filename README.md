@@ -37,8 +37,10 @@ newSave:addBlock(5,1,0,0)
 ```
 
 ### Save:addBlocks()
-`Save:addBlocks()` is a slightly more optimized way to add multiple blocks to a save string
-It works by inputting each block for the arguments
+`Save:addBlocks()` works by assuming each block is a block, adding them
+> [!TIP]
+> Slightly more optimized rather than for looping [Save:addBlock()](#saveaddblock)
+
 Example:
 ```lua
 local newBlock1 = cm2Lua.Block:new(5,1,0,0)
@@ -75,6 +77,7 @@ newSave:addBlockTable({newBlock1,newBlock2,newBlock3})
 In this case ID is reffering to the blocks index within the save
 > [!NOTE]
 > Blocks need to be added before making connections
+
 Example:
 ```lua
 local block1=cm2Lua.Block:new(5,1,0,0)
@@ -94,6 +97,7 @@ exampleSave2:addWire(1,2)
 `Save:findBlock()` inputs strictly `x, y, z`, and parses all the blocks in the save to see if it matches that **exact** position, returns the block if found, returns `nil` if no block found
 > [!CAUTION]
 > This is not optimized at all currently
+
 Example:
 ```lua
 local newBlock=cm2Lua.Block:new(5,1,0,0)
@@ -110,6 +114,7 @@ print(newSave:findBlock(1,0,0))
 
 > [!IMPORTANT]
 > Can only handle blocks and connections at the moment
+
 Example:
 ```lua
 local newSave=cm2Lua.Save:new()
@@ -134,6 +139,7 @@ print(newSave:export())
 `Save:exportToDpaste()` **attempts** to export the exported data to a dpaste link, if it fails you can set `cm2Lua.dpasteFallback` to true for the function to revert back to normal cm2Lua:export()
 > [!IMPORTANT]
 > this requires the libraries `socket.http` and `ltn12`
+> 
 Example:
 ```lua
 local newSave=cm2Lua.Save:new()
