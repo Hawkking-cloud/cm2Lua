@@ -95,8 +95,6 @@ exampleSave2:addWire(1,2)
 
 ### Save:findBlock()
 `Save:findBlock()` inputs strictly `x, y, z`, and parses all the blocks in the save to see if it matches that **exact** position, returns the block if found, returns `nil` if no block found
-> [!CAUTION]
-> This is not optimized at all currently
 
 Example:
 ```lua
@@ -139,7 +137,7 @@ print(newSave:export())
 `Save:exportToDpaste()` **attempts** to export the exported data to a dpaste link, if it fails you can set `cm2Lua.dpasteFallback` to true for the function to revert back to normal cm2Lua:export()
 > [!IMPORTANT]
 > this requires the libraries `socket.http` and `ltn12`
-> 
+
 Example:
 ```lua
 local newSave=cm2Lua.Save:new()
