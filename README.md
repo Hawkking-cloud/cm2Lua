@@ -4,15 +4,25 @@
 `cm2Lua` is a high-level savestring manipulator for the Roblox game [Circuit Maker 2](https://www.roblox.com/games/6652606416/Circuit-Maker-2). It allows players to create and manipulate circuit designs programmatically.
 
 ## Documentation
-1. [Saves](#save)
- - [Save:addBlock()](#save:addblock())
+[Saves](#save)
+- [Save:new()](#savenew)
+- [Save:addBlock()](#saveaddblock)
+- [Save:addBlocks()](#saveaddblocks)
+- [Save:addBlockTable()](#saveaddblocktable)
+- [Save:addWire()](#saveaddwire)
+- [Save:findBlock()](#savefindblock)
+- [Save:import()](#saveimport)
+- [Save:export()](#saveexport)
+- [Save:exportToDpaste()](#saveexporttodpaste)
 ## Save
 Save is the way you create a new instance of a savestring to append blocks and connections to
-To create a save you would use
+### Save:new()
+`Save:new()` creates a new instance of a Save
+Example:
 ```lua
-cm2Lua.Save:new()
+local newSave=cm2Lua.Save:new()
 ```
-(note that `cm2Lua.Save.new()` or `new cm2Lua.Save()` would not work
+
 ### Save:addBlock()
 `Save:addBlock()` works by either inputting a new block or the arguments for a new block
 Example:
@@ -125,7 +135,7 @@ print(newSave:export())
 ```
 
 ## Block
-a block is a block you append to a (Save)[#save]
+Block is a block you append to a (Save)[#save]
 
 ### Block:new()
 `Block:new()` inputs `id, x, y, z` and outputs a table with data for appending to a string within it
