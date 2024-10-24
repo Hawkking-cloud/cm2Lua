@@ -71,9 +71,10 @@ newSave:addBlockTable({newBlock1,newBlock2,newBlock3})
 ```
 
 ### Save:addWire()
-`Save:addWire()` can have 2 valid argument types, `Block, Block` or `Wid1, Wid2`
-In this case Wid is reffering to the blocks index within the save
-Please note that the blocks need to be added before making connections
+`Save:addWire()` can have 2 valid argument types, `Block, Block` or `ID1, ID2`
+In this case ID is reffering to the blocks index within the save
+> [!NOTE]
+> Blocks need to be added before making connections
 Example:
 ```lua
 local block1=cm2Lua.Block:new(5,1,0,0)
@@ -91,7 +92,8 @@ exampleSave2:addWire(1,2)
 
 ### Save:findBlock()
 `Save:findBlock()` inputs strictly `x, y, z`, and parses all the blocks in the save to see if it matches that **exact** position, returns the block if found, returns `nil` if no block found
-**NOTE: THIS IS NOT OPTIMIZED AT ALL CURRENTLY**
+> [!CAUTION]
+> This is not optimized at all currently
 Example:
 ```lua
 local newBlock=cm2Lua.Block:new(5,1,0,0)
@@ -103,8 +105,11 @@ print(newSave:findBlock(1,0,0))
 
 ### Save:import()
 `Save:import()` inputs a `savestring, x, y, z`, specifically a CM2 savestring
-**NOTE: only the savestring argument is required, X,Y,Z will autofill to 0 with no input**
-**Currently can only handle blocks and connections**
+> [!TIP]
+> only the savestring argument is required, X,Y,Z will autofill to 0 with no input
+
+> [!IMPORTANT]
+> Can only handle blocks and connections at the moment
 Example:
 ```lua
 local newSave=cm2Lua.Save:new()
@@ -127,7 +132,8 @@ print(newSave:export())
 
 ### Save:exportToDpaste()
 `Save:exportToDpaste()` **attempts** to export the exported data to a dpaste link, if it fails you can set `cm2Lua.dpasteFallback` to true for the function to revert back to normal cm2Lua:export()
-**NOTE: this requires the libraries socket.http and ltn12**
+> [!IMPORTANT]
+> this requires the libraries `socket.http` and `ltn12`
 Example:
 ```lua
 local newSave=cm2Lua.Save:new()
@@ -142,7 +148,9 @@ Block is a block you append to a (Save)[#save]
 
 ### Block:new()
 `Block:new()` inputs `id, x, y, z` and outputs a table with data for appending to a string within it
-**NOTE: only the id argument is required, X,Y,Z will autofill to 0 with no input**
+> [!TIP]
+> only the id argument is required, X,Y,Z will autofill to 0 with no input
+
 Example:
 ```lua
 local newSave=cm2Lua.Save:new()
