@@ -1,14 +1,18 @@
 # cm2Lua
-### cm2Lua is a high level savestring manipulator for the Roblox game [Circuit Maker 2](https://www.roblox.com/games/6652606416/Circuit-Maker-2)
+
+### Overview
+`cm2Lua` is a high-level savestring manipulator for the Roblox game [Circuit Maker 2](https://www.roblox.com/games/6652606416/Circuit-Maker-2). It allows players to create and manipulate circuit designs programmatically.
 
 ## Documentation
+1. [Saves](#save)
+
 ### Save
 Save is the way you create a new instance of a savestring to append blocks and connections to
 To create a save you would use
 ```lua
 cm2Lua.Save:new()
 ```
--# note that `cm2Lua.Save.new()` or `new cm2Lua.Save()` would not work
+(note that `cm2Lua.Save.new()` or `new cm2Lua.Save()` would not work
 ### Save:addBlock()
 Save:addBlock() works by either inputting a new block or the arguments for a new block
 Example:
